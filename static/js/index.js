@@ -1,5 +1,5 @@
 const app = () => {
-  const socket = io('http://localhost:3000');
+  const socket = io('https://server-rdio.onrender.com/chat');
   const messageInput = document.querySelector('.message-input');
   const messageList = document.querySelector('.messages-list');
   const sendButton = document.querySelector('.send-btn');
@@ -9,7 +9,7 @@ const app = () => {
 
   const getMessages = async () => {
     try {
-      const { data } = await axios.get('http://localhost:3000/api/chat');
+      const { data } = await axios.get('https://server-rdio.onrender.com/api/chat');
 
       renderMessages(data);
       data.forEach((item) => messages.push(item));
